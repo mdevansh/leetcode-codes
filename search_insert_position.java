@@ -1,7 +1,5 @@
 /**
  * Question Link : https://leetcode.com/problems/search-insert-position/
- *
- * See <a href="http://google.com">http://google.com</a>git
  */
 
 public class search_insert_position {
