@@ -12,11 +12,15 @@ public class unique_email_addresses {
     class Solution {
         public int numUniqueEmails(String[] emails) {
             List uniqueEmails = new ArrayList<String>();
+            List uniqueDomains = new ArrayList<String>();
             for(int i=0; i< emails.length;++i){
                 String[] parts = emails[i].split("@", 2);
                 String[] parts2 = parts[0].split("\\+", 2);
                 String s1 = parts2[0].replace(".", "");
-                if(!uniqueEmails.contains(s1))  uniqueEmails.add(s1);
+                if(!uniqueEmails.contains(s1) || !uniqueDomains.contains(parts[1]))  {
+                    uniqueEmails.add(s1);
+                    uniqueDomains.add(parts[1]);
+                }
             }
             return uniqueEmails.size();
         }
